@@ -1,0 +1,33 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: register-back
+  #    Se comenta porque ya esta la configuracion en el microservico de CONFIG -- solo se pone cuando se hacen conexiones directas entre microservicios sin usar el msvc de config
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/registerDB
+    username: xxharutoxx
+    password: dell@190
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+  devtools:
+    restart:
+      enabled: false
+#  security:
+#    user:
+#      name: haruto
+#      password: 123456
+#      roles: ADMIN
+
+#Configuracion para que el mcvs de student se registre en EUREKA
+#eureka:
+#  instance:
+#    hostname: localhost
+#  client:
+#    service-url:
+#      defaultZOne: http://localhost:8761/eureka
