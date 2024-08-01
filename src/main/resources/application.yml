@@ -7,14 +7,14 @@ spring:
   #    Se comenta porque ya esta la configuracion en el microservico de CONFIG -- solo se pone cuando se hacen conexiones directas entre microservicios sin usar el msvc de config
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/registerDB
-    username: xxharutoxx
-    password: dell@190
+    url: jdbc:mysql://${DB_HOST}:${DB_PORT}/${DB_NAME}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
   jpa:
     hibernate:
       ddl-auto: update
     database: mysql
-    database-platform: org.hibernate.dialect.MySQL8Dialect
+    database-platform: org.hibernate.dialect.MySQLDialect
   devtools:
     restart:
       enabled: false
